@@ -1,29 +1,23 @@
-//En este archivo solo se tendrá la función get_token
-//#include <stdio.h>
-#include "scanner.h"
+#include "Untitled2.h"
+
 
 int main (void) {
     char c = getchar();
-    while (c != 'EOF'){
+    while(c != 'E0F'){
         int token = get_token(c);
         if(token == 1){
-            printf(); //Imprimir token
+            int i = 0;
+            char palabra[i];
             while(token == 1){
-                
-            };
-
+               palabra[i] = c;
+               i++;
+               c = getchar();
+            }
+            printf("Cadena: %c \n", palabra);
         }
-        printf();
-    }
-    printf(); //Imprimir FDT
+        else if(token == 2){printf("Separador: %c \n", c);}
+        else if(token == 0){ printf("Fin de cadena: %c \n", c);}
+        c = getchar();
+        }
     return 0;
 }
-
-/*
-Se encuentra una letra
-        token = Cadena
-        Imprime token y la Cadena
-Se encuentra una coma
-        token = Separador
-        Imprime el token y la coma
-*/
