@@ -1,3 +1,3 @@
-enum tokens{Cadena, FDT, Separador};
+enum tokens{FDT, CAD, SEP};
 
 int get_token(char c);
