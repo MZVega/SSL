@@ -1,17 +1,17 @@
-//#include <stdio.h>
-//#include <ctype.h>
-//#include <string.h>
-#include "scanner.h"
-
-enum tokens{FDT, Cadena, Separador};
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include "Untitled2.h"
 
 int get_token(char c){
-    enum tokens token;
 
-    if(c == ','){token == Separador;}
-    else if(c == 'EOF'){token == FDT;}
-    else if (not(isspace(c))){token == Cadena;}
-    else{}
-    
-    return token;
+    enum tokens id;
+
+        if (!isspace(c)){
+            if(c == ','){id = SEP;}
+            else if(c == 'EOF') {id = FDT;}  //No consigo que lea EOF como tal
+            else {id = CAD;}
+    }
+    return id;
 }
+
