@@ -1,23 +1,20 @@
-#include "Untitled2.h"
-
+#include "scanner.h"
 
 int main (void) {
     char c = getchar();
     while(c != 'E0F'){
         int token = get_token(c);
-        if(token == 1){
-            int i = 0;
-            char palabra[i];
-            while(token == 1){
-               palabra[i] = c;
-               i++;
+        if(token == 2){printf("\nSeparador: %c", c); c = getchar();}
+        else if(token == 1){
+            printf("\nCadena:");
+            while(c != ',' && !isspace(c)){
+               printf("%c", c);
                c = getchar();
             }
-            printf("Cadena: %c \n", palabra);
+            ungetc(c);
         }
-        else if(token == 2){printf("Separador: %c \n", c);}
-        else if(token == 0){ printf("Fin de cadena: %c \n", c);}
-        c = getchar();
-        }
+        else if(token == 0){ printf("\nFin de cadena: %c", c); c = getchar();}
+        else {c = getchar();}
+    }
     return 0;
 }
