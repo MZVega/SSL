@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
-#include "Untitled2.h"
+#include "scanner.h"
 
 int get_token(char c){
 
@@ -11,7 +11,9 @@ int get_token(char c){
             if(c == ','){id = SEP;}
             else if(c == 'EOF') {id = FDT;}  //No consigo que lea EOF como tal
             else {id = CAD;}
-    }
+            }
+        else {}
     return id;
 }
+
 
